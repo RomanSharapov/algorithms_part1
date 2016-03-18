@@ -1,35 +1,6 @@
 import time
-# import cProfile
-#
-#
-# def do_cprofile(func):
-#     def profiled_func(*args, **kwargs):
-#         profile = cProfile.Profile()
-#         try:
-#             profile.enable()
-#             result = func(*args, **kwargs)
-#             profile.disable()
-#             return result
-#         finally:
-#             profile.print_stats()
-#     return profiled_func
 
-
-def three_sum(a):
-    """
-    3-Sum brute-force algorithm
-    Given N distinct integers, how many triples sum to exactly zero?
-    :param a: list of integers
-    :return count: how many triples sum to exactly zero
-    """
-    N = len(a)
-    count = 0
-    for i in range(N):
-        for j in range(i+1, N):
-            for k in range(j+1, N):
-                if a[i] + a[j] + a[k] == 0:
-                    count += 1
-    return count
+from ThreeSum_bruteForce import three_sum
 
 
 def main(source):
@@ -50,6 +21,10 @@ if __name__ == "__main__":
                        'Choose: ')
         if choice == '1':
             main('30 -40 -20 -10 40 0 10 5'.split())
+            test_files = '1Kints.txt', '2Kints.txt', '4Kints.txt', '8Kints.txt'
+            for file in test_files:
+                print('\nProcessing {} file...'.format(file))
+                main(open(file).readlines())
         elif choice == '2':
             main(input('Enter values delimited by spaces: ').split())
         elif choice == '3':
