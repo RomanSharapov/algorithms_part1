@@ -1,6 +1,6 @@
 import time
 
-from ThreeSum_bruteForce import three_sum
+from Analysis.ThreeSum_bruteForce import three_sum
 
 
 def main(source):
